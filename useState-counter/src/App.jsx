@@ -8,6 +8,10 @@ function App() {
     document.title = count
   }, [count])
   
+  useEffect(() => {
+    setCount(Math.round(Math.random() * 10))
+  }, [])
+
   return (
     <div className="App">
       <button onClick={() => setCount((count) + 1 )}>
