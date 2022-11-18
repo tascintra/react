@@ -7,6 +7,9 @@ export default function App() {
     { id: 3, name: "repo-3" },
   ])
  
+  function handleAddRepository() {
+    setRepositories([...repositories, { id: Math.random(), name: "Novo repo" }])
+  }
 
   return (
     <>
