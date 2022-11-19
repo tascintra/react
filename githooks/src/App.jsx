@@ -14,7 +14,7 @@ export default function App() {
 
   function handleFavorite(id) {
     const newRepositories = repositories.map(repo => {
-      return repo.id === id ? { ...repositories, favorite:true } : repo
+      return repo.id === id ? { ...repo, favorite: true } : repo
     })
 
     setRepositories(newRepositories)
@@ -30,6 +30,5 @@ export default function App() {
         </li>
       ))}
     </ul>
-
   )
 }
