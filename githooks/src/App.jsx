@@ -14,19 +14,19 @@ export default function App() {
 
   function handleFavorite(id) {
     const newRepositories = repositories.map(repo => {
-      return repo.id === id ? { ...repo, favorite: true } : repo
+      return repo.id === id ? { ...repo, favorite: !repo.favorite } : repo
     })
 
     setRepositories(newRepositories)
   }
 
   return (
-    <ul>
+    <ul style={{display: "flex", flexDirection: "column", gap: "12px"}}>
       { repositories.map( repo => (
-        <li key={repo.id}>
+        <li key={repo.id} style={{display: "flex", gap: "4px", alignItems: "center", fontFamily: "Arial"}}>
           {repo.name}
-          {repo.favorite && <span>(Favorito)</span>}
           <button onClick={() => handleFavorite(repo.id)}>Favoritar</button>
+          {repo.favorite && <span>[Favorito]</span>}
         </li>
       ))}
     </ul>
