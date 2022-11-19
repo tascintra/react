@@ -7,14 +7,16 @@ function App() {
     navigator.geolocation.watchPosition(handlePositionReceived)
   }, [])
 
-  function handlePositionReceived(coordinates) {
-    console.log(coordinates)
+  function handlePositionReceived({ coords }) {
+    const { latitude, longitude } = coords
+
+    setLocation({ latitude, longitude })
   }
 
   return (
     <>
-      Latitude: 34.33 <br />
-      Longitude: 1243432556767
+      Latitude: {location.latitude} <br />
+      Longitude: {location.longitude}
     </>
   )
 }
