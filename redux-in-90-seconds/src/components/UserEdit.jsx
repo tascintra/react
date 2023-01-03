@@ -13,7 +13,7 @@ const UserEdit = () => {
         onChange={(event) => setName(event.target.value)}
         value={name}
       />
-      <button onClick={() => dispatch(changeUser(name))} />
+      <button onClick={() => dispatch(changeUser(name))}>Salvar</button>
     </div>
   );
 };
