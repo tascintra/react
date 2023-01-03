@@ -4,10 +4,10 @@ export const slice = createSlice({
   name: 'user',
   initialState: {
     name: '',
-    reducers: {
-      changeUser(state, { payLoad }) {
-        return { ...state, name: payLoad };
-      },
+  },
+  reducers: {
+    changeUser(state, { payLoad }) {
+      return { ...state, name: payLoad };
     },
   },
 });

@@ -17,3 +17,5 @@ const UserEdit = () => {
     </div>
   );
 };
+
+export default UserEdit;
