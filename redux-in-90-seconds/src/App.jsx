@@ -3,7 +3,7 @@ import UserShow from './components/UserShow';
 
 function App() {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
       <UserEdit />
       <UserShow />
     </div>

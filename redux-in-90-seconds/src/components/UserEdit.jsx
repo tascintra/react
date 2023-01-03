@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { changeUser } from '../redux/userSlice';
 
 const UserEdit = () => {
-  const { name, setName } = useState('');
+  const [name, setName] = useState('');
   const dispatch = useDispatch();
 
   return (

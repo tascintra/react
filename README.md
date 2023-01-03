@@ -1,1 +1,1 @@
-Exercícios para estudo de React.
+Exercícios para estudo com React.
