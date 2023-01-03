@@ -6,8 +6,8 @@ export const slice = createSlice({
     name: '',
   },
   reducers: {
-    changeUser(state, { payLoad }) {
-      return { ...state, name: payLoad };
+    changeUser(state, { payload }) {
+      return { ...state, name: payload };
     },
   },
 });
