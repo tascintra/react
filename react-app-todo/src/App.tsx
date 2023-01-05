@@ -3,9 +3,13 @@ import './App.css';
 
 function App() {
   const [todos, setTodos] = useState([]);
+  const [error, setError] = useState({});
 
   useEffect(() => {
-
+    fetch('https://jsonplaceholder.typicode.com/todos')
+    .then(response => response.json())
+    .then(res => setTodos(res.slice(0, 10)))
+    .catch(err => setError(err))
   }, []);
 
   // https://jsonplaceholder.typicode.com/todos
