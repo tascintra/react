@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
+// @ts-ignore
+import Loader from './components/Loader';
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -13,16 +15,18 @@ function App() {
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/todos')
-    .then(response => response.json())
-    .then(res => setTodos(res.slice(0, 10)))
-    .catch(err => setError(err))
+      .then((response) => response.json())
+      .then((res) => setTodos(res.slice(0, 10)))
+      .catch((err) => setError(err));
   }, []);
 
   // https://jsonplaceholder.typicode.com/todos
 
   return (
-    <div className="App">
-      {todos.length > 0 ? todos.map((todo:Todo) => console.log(todo.title)) : ('Loading...')}
+    <div className='App'>
+      {todos.length > 0
+        ? todos.map((todo: Todo) => console.log(todo.title))
+        : (<Loader/>)}
     </div>
   );
 }
