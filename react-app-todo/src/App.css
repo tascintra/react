@@ -1,6 +1,6 @@
 .app {
   background: #152d3d;
-  padding: 30px;
+  padding: 32px;
 }
 
 .todos {
@@ -8,19 +8,19 @@
   flex-direction: column;
   background: #d18686;
   border-radius: 4px;
-  padding: 5px;
+  padding: 4px;
 }
 
 .todo {
   align-items: center;
   background: #fff;
-  border-radius: 3px;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.16);
   display: flex;
   font-size: 2rem;
   justify-content: space-between;
-  margin-bottom: 6px;
-  padding: 5px 10px;
+  margin-bottom: 8px;
+  padding: 8px 16px;
 }
 
 .button {
