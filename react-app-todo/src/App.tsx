@@ -20,11 +20,9 @@ function App() {
       .catch((err) => setError(err));
   }, []);
 
-  // https://jsonplaceholder.typicode.com/todos
-
   return (
     <div className='App'>
-      {todos.length > 0 ? todos.map((todo: Todo) => <Todo />) : <Loader />}
+      {todos.length > 0 ? todos.map((todo: Todo) => <Todo todo={todo} prop1 prop2 />) : <Loader />}
     </div>
   );
 }
