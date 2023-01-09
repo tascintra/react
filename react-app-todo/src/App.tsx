@@ -4,7 +4,7 @@ import Loader from './components/Loader';
 import Todo from './components/Todo';
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState<Todo[]>([]);
   const [error, setError] = useState({});
 
   interface Todo {
@@ -12,6 +12,12 @@ function App() {
     id: number;
     completed: boolean;
   }
+
+  const handleCompleted = (index: number) => {
+    const newTodos = [...todos];
+    newTodos[index].completed = !newTodos[index].completed;
+    setTodos(newTodos);
+  };
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/todos')
@@ -22,7 +28,13 @@ function App() {
 
   return (
     <div className='App'>
-      {todos.length > 0 ? todos.map((todo: Todo) => <Todo todo={todo} />) : <Loader />}
+      {todos.length > 0 ? (
+        todos.map((todo: Todo, index: number) => (
+          <Todo todo={todo} index={index} handleCompleted={handleCompleted} />
+        ))
+      ) : (
+        <Loader />
+      )}
     </div>
   );
 }
