@@ -5,9 +5,10 @@ interface Props {
   todo: TodoType;
   index: number;
   handleCompleted: (id: number) => void;
+  handleDelete: (id: number) => void;
 }
 
-const Todo: React.FC<Props> = ({ todo, index, handleCompleted }) => {
+const Todo: React.FC<Props> = ({ todo, index, handleCompleted, handleDelete }) => {
   return (
     <div
       className='todo'
@@ -20,7 +21,13 @@ const Todo: React.FC<Props> = ({ todo, index, handleCompleted }) => {
           style={{ color: todo.completed ? '#118800' : '#FF3333' }}
           onClick={() => handleCompleted(index)}
         >
-          {todo.completed ? 'Incomplete' : 'ToDo'}
+          {todo.completed ? 'Completed' : 'ToDo'}
+        </button>
+        <button
+          className='button'
+          onClick={() => handleDelete(index)}
+        >
+          Delete
         </button>
       </div>
     </div>

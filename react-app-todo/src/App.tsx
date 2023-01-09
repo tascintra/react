@@ -19,6 +19,12 @@ function App() {
     setTodos(newTodos);
   };
 
+  const handleDelete = (index: number) => {
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
+    setTodos(newTodos);
+  };
+
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/todos')
       .then((response) => response.json())
@@ -30,7 +36,7 @@ function App() {
     <div className='App'>
       {todos.length > 0 ? (
         todos.map((todo: Todo, index: number) => (
-          <Todo todo={todo} index={index} handleCompleted={handleCompleted} />
+          <Todo todo={todo} index={index} handleCompleted={handleCompleted} handleDelete={handleDelete} />
         ))
       ) : (
         <Loader />
