@@ -20,7 +20,7 @@ const Todo: React.FC<Props> = ({ todo, index, handleCompleted }) => {
           style={{ color: todo.completed ? '#118800' : '#FF3333' }}
           onClick={() => handleCompleted(index)}
         >
-          {todo.completed ? 'Completed' : 'Incompleted'}
+          {todo.completed ? 'Incomplete' : 'ToDo'}
         </button>
       </div>
     </div>
