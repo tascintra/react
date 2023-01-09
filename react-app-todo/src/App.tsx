@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-// @ts-ignore
 import Loader from './components/Loader';
 
 function App() {
